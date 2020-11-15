@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:weatherdb;mode=mysql
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+scheduler:
+  fixedRate: 15000
+cities: '[{"name":"Espoo,fi", "upperLimit": 5, "lowerLimit": 0}, {"name":"Turku,fi", "upperLimit": 15, "lowerLimit": 10}]'
+openWeather:
+  url: http://api.openweathermap.org/data/2.5/forecast?units=metric
+  appId: 6de9a7ba1b7d12ef605fed29c59a614e
+

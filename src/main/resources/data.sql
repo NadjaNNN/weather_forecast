@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS city;
+
+CREATE TABLE city (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  UNIQUE (name)
+);
+
+DROP TABLE IF EXISTS forecast;
+
+CREATE TABLE forecast (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  city_id INT NOT NULL,
+  temperature DOUBLE NOT NULL,
+  exceeded_lower_limit BOOLEAN NOT NULL,
+  exceeded_upper_limit BOOLEAN NOT NULL,
+  date_time VARCHAR(20) NOT NULL,
+  FOREIGN KEY (city_id) REFERENCES city(id) ON DELETE CASCADE
+);
